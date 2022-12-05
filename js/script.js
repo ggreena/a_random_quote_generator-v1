@@ -63,13 +63,16 @@ function printQuote(){
   let randomQuote = getRandomQuote();
   let quote = "<p>" + randomQuote.quote + "</p>";
   let source = "<p>" + randomQuote.source; 
+  let message = quote + source;
   if(randomQuote.year.length > 0){
-    let year = "<p>" + randomQuote.year;
+    message += <span>randomQuote.year</span>;
   };
   if (randomQuote.citation.length > 0){
-    let citation = "<p>" + randomQuote.citation;
-  } "</p>""
+    message += <span>randomQuote.citation</span>;
+  } "</p>";
 };
+
+console.log(printQuote());
 
 /***
  * click event listener for the print quote button
