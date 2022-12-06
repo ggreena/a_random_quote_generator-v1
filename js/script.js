@@ -119,8 +119,8 @@ background();
  * refresh quote and background color every 10 seconds
 ***/
 
-// setInterval(printQuote, 10000)
-// setInterval(background, 10000)
+setInterval(printQuote, 10000)
+setInterval(background, 10000)
 
 /***
  * click event listener for the print quote button
