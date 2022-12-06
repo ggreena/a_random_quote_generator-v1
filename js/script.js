@@ -12,16 +12,16 @@ project 1 - A Random Quote Generator
 ***/
 
 let quotes = [ {
-  quote: "'A long time ago I asked myself, Do I want to be right, or do I want to be kind?. I opted for kind.'" ,
+  quote: "'A long time ago I asked myself, 'Do I want to be right, or do I want to be kind?'. I opted for kind.'" ,
   source: "Jane Lynch",
   year: "",
   citation: "",
   tags: "Inpsirational"
   },
-  { quote: "'History isn't something you look back at and say it was inevitable. It happens because people make decisions that are sometimes very impulsive and of the moment, but those moments are cumulative realities.'" ,
-  source: "Marsha P. Johnson",
-  year: "",
-  citation: "",
+  { quote: "'I can resist everything except temptation.'" ,
+  source: "Oscar Wilde",
+  year: "1892",
+  citation: "Lady Windermere's Fan",
   tags: "History"
   }, 
   { quote: "'Born this way'" ,
@@ -81,9 +81,18 @@ function printQuote(){
     message += "<span class = tags > " + randomQuote.tags + "</span>";
   }; 
   message += "</p>";
+  document.getElementById('quote-box').innerHTML = message;
+  console.log(randomQuote);
+  
   return message;
 };
 
+function background(){
+  let colors = ["pink","blue","red","green","yellow"];
+  let randomnumber = ((Math.floor(Math.random() * colors.length)));
+  return document.body.style.background = colors[randomnumber];
+};
+;
 // console.log(printQuote());
 
 /***
