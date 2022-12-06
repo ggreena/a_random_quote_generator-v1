@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+ * `quotes` array - 5 different quotes with: {quote, source, year, citation, tags}
 ***/
 
 let quotes = [ {
@@ -48,6 +48,8 @@ let quotes = [ {
 
 /***
  * `getRandomQuote` function
+ * return random number length of quoets array
+ * return random quote using random number
 ***/
 
 
@@ -57,17 +59,23 @@ function getRandomQuote(){
   return quotes[randomnumber];
 };
 
-// console.log(getRandomQuote());
-// console.log(Math.random() * quotes.length);
+
 /***
  * `printQuote` function
+ * concatenate all present objects in each random quote
+ * use if/else statement to determine if class is present
+ * use <p> and <span>
+ * added step for "tags"
+ * also added format in style.css to include ", " before the tag
+ * assign html string to innerHTML of quote-box
+ * console.log (randomQuote) to test
 ***/
 
 
 function printQuote(){
   let randomQuote = getRandomQuote();
   let message = "<p class = quotes >" + randomQuote.quote + "</p>"
-  + "<p class = source > " + randomQuote.source;  
+  + "<p class = source > " + randomQuote.source; 
   if(randomQuote.year === "" ){
   } else {
     message += "<span class = year > " + randomQuote.year + "</span>";
@@ -87,17 +95,40 @@ function printQuote(){
   return message;
 };
 
+/***
+ * `background` function
+ * randomize background color with each new quote
+ * randomize each variable in rgb(x,y,z) 
+ * combine to assign new color to background-color of style.css
+ *  * help from: https://www.geeksforgeeks.org/ , https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+***/
+
 function background(){
-  let colors = ["pink","blue","red","green","yellow"];
-  let randomnumber = ((Math.floor(Math.random() * colors.length)));
-  return document.body.style.background = colors[randomnumber];
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  var randomColor = "rgb(" + x + "," + y + "," + z + ")";
+  document.body.style.background = randomColor;
+
 };
+background();
 ;
-// console.log(printQuote());
+
+/***
+ * setInterval(func, delay)
+ * refresh quote and background color every 10 seconds
+***/
+
+// setInterval(printQuote, 10000)
+// setInterval(background, 10000)
 
 /***
  * click event listener for the print quote button
+ * click event listener for new background color
+ * assign quote-box inner HTML to print quote function
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 document.getElementById('quote-box').innerHTML = printQuote(); 
+
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", background, false);
