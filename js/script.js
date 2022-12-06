@@ -12,31 +12,31 @@ project 1 - A Random Quote Generator
 ***/
 
 let quotes = [ {
-  quote: "'A long time ago I asked myself, 'Do I want to be right, or do I want to be kind?'. I opted for kind.'" ,
+  quote: "A long time ago I asked myself, 'Do I want to be right, or do I want to be kind?'. I opted for kind." ,
   source: "Jane Lynch",
   year: "",
   citation: "",
   tags: "Inpsirational"
   },
-  { quote: "'I can resist everything except temptation.'" ,
+  { quote: "I can resist everything except temptation." ,
   source: "Oscar Wilde",
   year: "1892",
   citation: "Lady Windermere's Fan",
   tags: "History"
   }, 
-  { quote: "'Born this way'" ,
+  { quote: "Born this way" ,
   source: "Lady Gaga",
   year: "",
   citation: "",
   tags: "Pop Culture"
 }, 
-{ quote: "'If you are neutral in situations of injustice, you have chosen the side of the oppressor.'" ,
+{ quote: "If you are neutral in situations of injustice, you have chosen the side of the oppressor." ,
   source: "Desmond Tutu",
   year: "1984",
   citation: "Unexpected News",
   tags: "Civil Rights"
 }, 
-{ quote: " 'From each according to his ability, to each according to his needs'" ,
+{ quote: "From each according to his ability, to each according to his needs" ,
   source: "Karl Marx",
   year: "1875",
   citation: "Critique of the Gotha Programme",
@@ -74,7 +74,7 @@ function getRandomQuote(){
 
 function printQuote(){
   let randomQuote = getRandomQuote();
-  let message = "<p class = quotes >" + randomQuote.quote + "</p>"
+  let message = "<p class = quote >" + randomQuote.quote + "</p>"
   + "<p class = source > " + randomQuote.source; 
   if(randomQuote.year === "" ){
   } else {
